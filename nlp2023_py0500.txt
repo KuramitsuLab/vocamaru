@@ -1,0 +1,500 @@
+<nl>
+<tab>
+<sep>
+<code>
+</code>
+False
+None
+True
+and
+as
+assert
+async
+await
+break
+class
+continue
+def
+del
+elif
+else
+except
+finally
+for
+from
+global
+if
+import
+in
+is
+lambda
+nonlocal
+not
+or
+pass
+raise
+return
+try
+while
+with
+yield
+▁False
+▁None
+▁True
+▁and
+▁as
+▁async
+▁await
+▁else
+▁for
+▁from
+▁if
+▁import
+▁in
+▁is
+▁lambda
+▁not
+▁or
+▁with
++
+-
+~
+*
+**
+@
+/
+//
+%
+<<
+>>
+&
+^
+|
+<
+<=
+>
+>=
+!=
+==
+...
+:=
+▁+
+▁-
+▁~
+▁*
+▁**
+▁@
+▁/
+▁//
+▁%
+▁<<
+▁>>
+▁&
+▁^
+▁|
+▁<
+▁<=
+▁>
+▁>=
+▁!=
+▁==
+▁:=
+s	-3.06833
+else	-4.57206
+d	-4.62589
+ed	-4.85662
+and	-4.95932
+False	-5.03906
+t	-5.06068
+y	-5.09559
+is	-5.09909
+S	-5.10233
+p	-5.11575
+n	-5.15087
+e	-5.16089
+m	-5.20864
+c	-5.22954
+r	-5.30874
+f	-5.36003
+the	-5.36831
+g	-5.38928
+pass	-5.44284
+i	-5.48512
+b	-5.52422
+l	-5.55203
+ing	-5.57008
+P	-5.59691
+instance	-5.60121
+a	-5.62017
+h	-5.65203
+params	-5.70908
+er	-5.80353
+v	-5.82406
+values	-5.82504
+k	-5.82822
+x	-5.8293
+C	-5.83774
+class	-5.84289
+D	-5.87459
+T	-5.8946
+es	-5.91134
+E	-5.9275
+L	-5.95385
+o	-5.99107
+A	-6.02269
+al	-6.02637
+w	-6.08402
+re	-6.08797
+B	-6.12095
+u	-6.12335
+M	-6.14067
+items	-6.14772
+in	-6.17112
+keys	-6.1776
+F	-6.21795
+G	-6.27848
+un	-6.28265
+names	-6.29029
+status	-6.31128
+N	-6.36658
+axis	-6.38255
+R	-6.40268
+options	-6.44279
+id	-6.44658
+ar	-6.47394
+files	-6.50929
+z	-6.55407
+or	-6.56122
+I	-6.56256
+py	-6.57569
+st	-6.58685
+V	-6.5982
+headers	-6.61485
+en	-6.62326
+O	-6.62983
+lines	-6.63061
+an	-6.64583
+at	-6.68708
+lib	-6.69489
+it	-6.70724
+types	-6.70843
+copy	-6.72545
+H	-6.72848
+j	-6.72937
+W	-6.73771
+numpy	-6.74672
+fields	-6.74932
+as	-6.75081
+list	-6.75593
+results	-6.75766
+process	-6.77206
+ic	-6.78927
+ids	-6.79346
+q	-6.79491
+on	-6.80712
+@	-6.81592
+columns	-6.81997
+to	-6.86707
+logging	-6.86807
+opts	-6.87348
+utils	-6.87751
+data	-6.88919
+le	-6.89258
+ch	-6.90167
+im	-6.9086
+Y	-6.90886
+body	-6.93966
+ers	-6.96093
+el	-6.96887
+dict	-6.98454
+de	-6.98606
+settings	-6.9974
+U	-7.0046
+file	-7.01099
+labels	-7.01274
+sorted	-7.01502
+bytes	-7.02542
+out	-7.02962
+enumerate	-7.04125
+ex	-7.0516
+K	-7.05322
+ies	-7.07399
+nodes	-7.10045
+The	-7.10416
+us	-7.11168
+ET	-7.1194
+time	-7.12408
+Q	-7.13193
+X	-7.14046
+get	-7.14215
+rows	-7.14523
+log	-7.14786
+RE	-7.15461
+sub	-7.16445
+end	-7.16959
+con	-7.18644
+this	-7.18752
+objects	-7.18801
+ext	-7.19108
+points	-7.19122
+url	-7.19641
+parameters	-7.19752
+up	-7.19958
+ter	-7.2055
+exists	-7.21268
+startswith	-7.21389
+ity	-7.21759
+able	-7.22331
+full	-7.22517
+am	-7.24059
+min	-7.24216
+matrix	-7.24589
+models	-7.25697
+errors	-7.25698
+et	-7.25976
+IN	-7.26916
+ro	-7.28106
+ent	-7.29438
+co	-7.29691
+str	-7.29701
+stats	-7.30305
+il	-7.31386
+ion	-7.31412
+ly	-7.33358
+now	-7.34944
+plot	-7.35266
+max	-7.35826
+Re	-7.36725
+est	-7.37364
+cols	-7.37453
+Error	-7.38361
+tags	-7.38672
+indices	-7.38694
+ac	-7.39518
+name	-7.40586
+ra	-7.4104
+zeros	-7.41278
+ions	-7.41718
+ur	-7.41749
+ol	-7.41826
+Not	-7.42192
+paths	-7.43398
+IO	-7.43624
+To	-7.43711
+verbose	-7.44588
+groups	-7.45023
+per	-7.45406
+os	-7.46489
+attrs	-7.46866
+size	-7.4714
+cl	-7.47267
+li	-7.47694
+ag	-7.48039
+vals	-7.48291
+directory	-7.487
+parts	-7.48908
+all	-7.49022
+ad	-7.49732
+box	-7.50086
+pro	-7.50695
+th	-7.51642
+type	-7.51727
+te	-7.51859
+subprocess	-7.53337
+ER	-7.5339
+no	-7.54468
+me	-7.55186
+new	-7.57145
+ul	-7.57236
+ab	-7.57349
+tr	-7.57621
+ations	-7.57765
+ation	-7.58967
+qu	-7.59006
+ma	-7.59512
+six	-7.60523
+info	-7.60579
+ver	-7.61845
+ive	-7.62114
+ate	-7.62122
+io	-7.62247
+features	-7.62319
+requests	-7.62686
+tokens	-7.62942
+axes	-7.64657
+flags	-7.64831
+ip	-7.65636
+samples	-7.65874
+trans	-7.66235
+um	-7.66259
+ap	-7.66542
+la	-7.66677
+ir	-7.66888
+pe	-7.66957
+ct	-7.67065
+map	-7.67507
+apply	-7.68259
+will	-7.69059
+ize	-7.69871
+IT	-7.70134
+weights	-7.70831
+access	-7.71073
+pre	-7.71632
+op	-7.71637
+pl	-7.71638
+ut	-7.72547
+AL	-7.72994
+path	-7.73554
+dir	-7.74335
+AR	-7.74606
+ED	-7.74956
+propertie	-7.75702
+children	-7.75922
+ctypes	-7.7653
+set	-7.76601
+my	-7.76606
+ST	-7.76663
+ho	-7.77065
+AN	-7.78431
+open	-7.78562
+act	-7.78602
+attribute	-7.78931
+split	-7.79667
+vars	-7.7991
+TYPE	-7.79976
+ot	-7.80424
+ri	-7.80753
+words	-7.81424
+Class	-7.81565
+read	-7.81602
+variable	-7.8201
+db	-7.82014
+coords	-7.822
+AT	-7.8226
+seconds	-7.82367
+ts	-7.82539
+ify	-7.82733
+num	-7.82817
+parsed	-7.82895
+if	-7.83097
+mod	-7.83121
+LOG	-7.83953
+Con	-7.83993
+app	-7.85198
+counts	-7.8525
+comp	-7.85784
+In	-7.86162
+dumps	-7.86598
+cos	-7.86874
+pos	-7.87155
+obj	-7.87234
+inputs	-7.87315
+start	-7.87931
+text	-7.88198
+cr	-7.88273
+ce	-7.88451
+df	-7.8864
+edges	-7.89201
+policy	-7.89934
+line	-7.90306
+spec	-7.90347
+units	-7.90886
+methods	-7.91395
+matches	-7.91525
+ow	-7.91796
+colors	-7.92058
+required	-7.93011
+iter	-7.9314
+Qt	-7.93168
+property	-7.9323
+Return	-7.93261
+di	-7.94436
+ax	-7.94535
+mag	-7.95532
+ca	-7.95748
+loads	-7.9587
+key	-7.95943
+om	-7.9619
+mo	-7.96297
+oo	-7.96476
+tri	-7.96511
+pi	-7.96762
+alias	-7.97381
+fetch	-7.97443
+ep	-7.97616
+ant	-7.9807
+res	-7.98307
+ance	-7.98972
+astype	-7.99419
+hash	-7.9945
+ang	-7.99868
+layers	-8.00069
+dims	-8.00081
+events	-8.00118
+contents	-8.00197
+actions	-8.00222
+argument	-8.00313
+gr	-8.00355
+be	-8.00455
+rs	-8.00659
+ne	-8.00687
+col	-8.00864
+lat	-8.00874
+ors	-8.01217
+age	-8.01254
+inter	-8.01575
+ind	-8.0185
+elements	-8.0189
+ay	-8.02463
+endswith	-8.02524
+filters	-8.02718
+rec	-8.03007
+tra	-8.03155
+ha	-8.03309
+ES	-8.03469
+NAME	-8.03589
+net	-8.03754
+safe	-8.03762
+exceptions	-8.04649
+format	-8.04819
+summary	-8.04924
+len	-8.05027
+times	-8.06006
+defaults	-8.06135
+which	-8.06154
+OR	-8.06202
+DEFAULT	-8.06681
+warnings	-8.07484
+lo	-8.07666
+states	-8.08108
+win	-8.08511
+ub	-8.08581
+bin	-8.09026
+modules	-8.09156
+loss	-8.09689
+itertool	-8.10126
+ok	-8.1013
+gen	-8.1013
+em	-8.1022
+over	-8.10891
+EN	-8.11343
+My	-8.11422
+arg	-8.11454
+after	-8.11732
+Thi	-8.11911
+par	-8.12081
+check	-8.12168
+bo	-8.12495
+nt	-8.12552
+int	-8.12615
+classes	-8.12661
+category	-8.12962
+val	-8.13533
+CLI	-8.1407
+nd	-8.14408
+LE	-8.14462
+sh	-8.14595
+code	-8.14618
+lu	-8.14868
+run	-8.14973
+verify	-8.1529
