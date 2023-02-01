@@ -9,7 +9,7 @@ __添付してあるファイル__
 * `empty.txt`: 何も追加しない
 * `nlp2023_py0500.txt`: Python語彙500
 * `nlp2023_py2500.txt`: Python語彙2500
-* `nlp2023_py5000.txt`: Python語彙2500
+* `nlp2023_py5000.txt`: Python語彙5000
 
 ## ボキャブラリの消去
 
