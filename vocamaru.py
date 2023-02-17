@@ -9,7 +9,7 @@ from janome.tokenizer import Tokenizer
 import copy
 import argparse
 from sentencepiece import sentencepiece_model_pb2 as model
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, T5Tokenizer
 
 LOG = None
 
@@ -145,12 +145,13 @@ def remove_vocab(vocab_map, removed_map, new_set):
     println('[数字重複]', len(removed_map)-before)
     return trimed
 
+
 def append_extra_ids(m):
     found_extra_ids = False
     for id, piece in enumerate(m.pieces):
         token = piece.piece
         if '<extra_id_' in token:
-            found_extra_ids=True
+            found_extra_ids = True
             if token.startswith('▁'):
                 piece.piece = piece.piece[1:]
             print(token, id, piece.type, piece.score)
@@ -163,15 +164,18 @@ def append_extra_ids(m):
         p.type = 4
         p.score = 0.0
         m.pieces.append(p)
-    #print(len(m.pieces), type(m.pieces), dir(m.pieces))
+    # print(len(m.pieces), type(m.pieces), dir(m.pieces))
+
 
 def count_parameters(model):
     return sum(p.numel() for p in model.parameters())
+
 
 TAIL_FIRST = True
 SKIP_EMPTY = False
 
 # https://blog.ceshine.net/post/trim-down-sentencepiece-vocabulary/#download-the-pretrained-model
+
 
 def replace_vocab(files, tokenizer_path, save_path='local'):
     # トークンナイザーのコピーをsave_pathに作る
@@ -181,17 +185,17 @@ def replace_vocab(files, tokenizer_path, save_path='local'):
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, use_fast=False)
     # tokenizer.special_tokens_map_file = "special_tokens_map.json"
     if 'special_tokens_map_file' in tokenizer.init_kwargs:
-        tokenizer.init_kwargs['special_tokens_map_file']='special_tokens_map.json'
+        tokenizer.init_kwargs['special_tokens_map_file'] = 'special_tokens_map.json'
     if 'additional_special_tokens' in tokenizer.init_kwargs:
-        #tokenizer.init_kwargs['additional_special_tokens']=[]
+        # tokenizer.init_kwargs['additional_special_tokens']=[]
         del tokenizer.init_kwargs['additional_special_tokens']
     if 'extra_ids' in tokenizer.init_kwargs:
         del tokenizer.init_kwargs['extra_ids']
 
     print(tokenizer.init_kwargs)
 
-    tokenizer.additional_special_tokens=[]
-    tokenizer.additional_special_tokens_ids=[]
+    tokenizer.additional_special_tokens = []
+    tokenizer.additional_special_tokens_ids = []
     tokenizer.save_pretrained(save_path)
     println('[新しいモデルの保存先]', save_path)
 
@@ -261,6 +265,9 @@ def replace_vocab(files, tokenizer_path, save_path='local'):
     #             piece.piece = piece.piece[1:]
     with open(f"{save_path}/spiece.model", 'wb') as f:
         f.write(m.SerializeToString())
+    tokenizer = T5Tokenizer(f"{save_path}/spiece.model",
+                            extra_ids=0, additional_special_tokens=[])
+    tokenizer.save_pretrained(save_path)
     test_vocab(save_path, new_vocab)
 
 
