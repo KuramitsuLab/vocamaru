@@ -6,9 +6,10 @@ import pandas as pd
 
 from janome.tokenizer import Tokenizer
 
+import copy
 import argparse
 from sentencepiece import sentencepiece_model_pb2 as model
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 LOG = None
 
@@ -144,15 +145,48 @@ def remove_vocab(vocab_map, removed_map, new_set):
     println('[数字重複]', len(removed_map)-before)
     return trimed
 
+def append_extra_ids(m):
+    found_extra_ids = False
+    for id, piece in enumerate(m.pieces):
+        token = piece.piece
+        if '<extra_id_' in token:
+            found_extra_ids=True
+            if token.startswith('▁'):
+                piece.piece = piece.piece[1:]
+            print(token, id, piece.type, piece.score)
+            return
+    if found_extra_ids:
+        return
+    for id in range(99, -1, -1):
+        p = copy.copy(m.pieces[0])
+        p.piece = f'<extra_id_{id}>'
+        p.type = 4
+        p.score = 0.0
+        m.pieces.append(p)
+    #print(len(m.pieces), type(m.pieces), dir(m.pieces))
+
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters())
 
 TAIL_FIRST = True
 SKIP_EMPTY = False
 
+# https://blog.ceshine.net/post/trim-down-sentencepiece-vocabulary/#download-the-pretrained-model
 
 def replace_vocab(files, tokenizer_path, save_path='local'):
     # トークンナイザーのコピーをsave_pathに作る
+    pretrained = AutoModelForSeq2SeqLM.from_pretrained(tokenizer_path)
+    println('[パラメータ数]', tokenizer_path, count_parameters(pretrained))
+    pretrained.save_pretrained(save_path)
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, use_fast=False)
     # tokenizer.special_tokens_map_file = "special_tokens_map.json"
+    print(dir(tokenizer))
+    print(dir(tokenizer.init_kwargs))
+
+    tokenizer.additional_special_tokens=[]
+    tokenizer.additional_special_tokens_ids=[]
+    print(tokenizer.additional_special_tokens)
+    print(tokenizer.additional_special_tokens_ids)
     tokenizer.save_pretrained(save_path)
     println('[新しいモデルの保存先]', save_path)
 
@@ -214,11 +248,12 @@ def replace_vocab(files, tokenizer_path, save_path='local'):
             d = {'in': newtoken, 'out': token,
                  'idx': idx, 'score': m.pieces[idx].score}
             println(json.dumps(d, ensure_ascii=False), file=w)
+    append_extra_ids(m)
     # mT5用のおまじない
-    if len(m.pieces) > 250000:
-        for i, piece in enumerate(m.pieces[250000:], 250000):
-            if 'extra_id' in piece.piece:
-                piece.piece = piece.piece[1:]
+    # if len(m.pieces) > 250000:
+    #     for i, piece in enumerate(m.pieces[250000:], 250000):
+    #         if 'extra_id' in piece.piece:
+    #             piece.piece = piece.piece[1:]
     with open(f"{save_path}/spiece.model", 'wb') as f:
         f.write(m.SerializeToString())
     test_vocab(save_path, new_vocab)
