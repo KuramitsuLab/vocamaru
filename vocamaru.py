@@ -180,13 +180,18 @@ def replace_vocab(files, tokenizer_path, save_path='local'):
     pretrained.save_pretrained(save_path)
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, use_fast=False)
     # tokenizer.special_tokens_map_file = "special_tokens_map.json"
-    print(dir(tokenizer))
-    print(dir(tokenizer.init_kwargs))
+    if 'special_tokens_map_file' in tokenizer.init_kwargs:
+        tokenizer.init_kwargs['special_tokens_map_file']='special_tokens_map.json'
+    if 'additional_special_tokens' in tokenizer.init_kwargs:
+        #tokenizer.init_kwargs['additional_special_tokens']=[]
+        del tokenizer.init_kwargs['additional_special_tokens']
+    if 'extra_ids' in tokenizer.init_kwargs:
+        del tokenizer.init_kwargs['extra_ids']
+
+    print(tokenizer.init_kwargs)
 
     tokenizer.additional_special_tokens=[]
     tokenizer.additional_special_tokens_ids=[]
-    print(tokenizer.additional_special_tokens)
-    print(tokenizer.additional_special_tokens_ids)
     tokenizer.save_pretrained(save_path)
     println('[新しいモデルの保存先]', save_path)
 
@@ -262,7 +267,7 @@ def replace_vocab(files, tokenizer_path, save_path='local'):
 def test_vocab(tokenizer_path, new_vocab):
     tokenizer = AutoTokenizer.from_pretrained(
         tokenizer_path, use_fast=False)
-    println(tokenizer)
+    println(tokenizer_path, tokenizer)
     for v in new_vocab:
         tt = tokenizer.encode(v)
         if len(tt) > 3:
